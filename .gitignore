@@ -1,41 +1,579 @@
-# Compiled Lua sources
-luac.out
+local playerlist = {};
+for i,v in pairs(game.Players:GetPlayers())do
+table.insert(playerlist,v.Name)
+end
 
-# luarocks build files
-*.src.rock
-*.zip
-*.tar.gz
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("Spts Free Script v1.5", "BloodTheme")
+local Tab = Window:NewTab("Farm")
+local Section = Tab:NewSection("Farm")
 
-# Object files
-*.o
-*.os
-*.ko
-*.obj
-*.elf
+Section:NewToggle("FS10T", "1", function(v)
+getgenv().autofs = v
+while true do wait(0.1)
+if not getgenv().autofs then return end
+local args = {
+    [1] = {
+        [1] = "+FS6"
+    }
+}
 
-# Precompiled Headers
-*.gch
-*.pch
 
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
-*.def
-*.exp
+game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
+end
+end)
 
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
+Section:NewToggle("FS100B", "1", function(v)
+getgenv().autofs = v
+while true do wait(0.1)
+if not getgenv().autofs then return end
+local args = {
+    [1] = {
+        [1] = "+FS5"
+    }
+}
 
-# Executables
-*.exe
-*.out
-*.app
-*.i*86
-*.x86_64
-*.hex
 
+game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
+end
+end)
+
+Section:NewToggle("FS1B", "1", function(v)
+getgenv().autofs = v
+while true do wait(0.1)
+if not getgenv().autofs then return end
+local args = {
+    [1] = {
+        [1] = "+FS4"
+    }
+}
+
+
+game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
+end
+end)
+
+
+Section:NewToggle("PP1QA", "1", function(v)
+getgenv().autofs = v
+while true do wait(0.1)
+if not getgenv().autofs then return end
+local args = {
+    [1] = {
+        [1] = "+PP6"
+    }
+}
+
+game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
+end
+end)
+
+
+Section:NewToggle("PP1T", "1", function(v)
+getgenv().autofs = v
+while true do wait(0.1)
+if not getgenv().autofs then return end
+local args = {
+    [1] = {
+        [1] = "+PP5"
+    }
+}
+
+game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
+end
+end)
+
+Section:NewToggle("PP1B", "1", function(v)
+getgenv().autofs = v
+while true do wait(0.1)
+if not getgenv().autofs then return end
+local args = {
+    [1] = {
+        [1] = "+PP4"
+    }
+}
+
+game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
+end
+end)
+
+Section:NewToggle("PP1M", "1", function(v)
+getgenv().autofs = v
+while true do wait(0.1)
+if not getgenv().autofs then return end
+local args = {
+    [1] = {
+        [1] = "+PP3"
+    }
+}
+
+game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
+end
+end)
+
+local Tab = Window:NewTab("Teleports + Split")
+local Section = Tab:NewSection("Teleports + Split")
+Section:NewButton("BT10T+FS10T", "123", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-279, 279, 1007)
+wait(0.5)
+    game.Players.LocalPlayer.Character.UpperTorso.Waist:remove()
+wait(0.5)
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-369,15735,-9)
+end)
+Section:NewButton("BT10T+PP1T", "123", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-279, 279, 1007)
+wait(0.5)
+    game.Players.LocalPlayer.Character.UpperTorso.Waist:remove()
+wait(0.5)
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2582, 5516, -504)
+end)
+
+Section:NewButton("BT10T+PP1QA", "123", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-279, 279, 1007)
+wait(0.5)
+    game.Players.LocalPlayer.Character.UpperTorso.Waist:remove()
+wait(0.5)
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2542, 5412, -497)
+end)
+
+Section:NewButton("BT100b+FS100b", "123", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-275, 281, 991)
+wait(0.5)
+    game.Players.LocalPlayer.Character.UpperTorso.Waist:remove()
+wait(0.5)
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1380, 9274, 1647)
+end)
+
+Section:NewButton("BT1b+FS1b", "123", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-244, 287, 980)
+wait(0.5)
+    game.Players.LocalPlayer.Character.UpperTorso.Waist:remove()
+wait(0.5)
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1176, 4789, -2293)
+end)
+
+Section:NewButton("BT100+FS", "123", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(369, 250, -445)
+wait(0.5)
+    game.Players.LocalPlayer.Character.UpperTorso.Waist:remove()
+wait(0.5)
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(406, 249, 953)
+end)
+
+Section:NewButton("BT10k+FSC", "123", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(358, 264, -493)
+wait(0.5)
+    game.Players.LocalPlayer.Character.UpperTorso.Waist:remove()
+wait(0.5)
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2276, 1943, 1053)
+end)
+
+local Tab = Window:NewTab("Tp To Locations")
+local Section = Tab:NewSection("Tp To Locations")
+Section:NewButton("SafeZone", "123", function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(471, 249, 889)
+wait(0.5)
+end)
+
+Section:NewButton("LeaderBoards", "123", function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-766, 249, 750)
+wait(0.5)
+end)
+
+Section:NewButton("FS Rock x10", "123", function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(382, 249, 971)
+wait(0.5)
+end)
+
+Section:NewButton("FS Cristal x100", "123", function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2273, 1943, 1048)
+wait(0.5)
+end)
+
+Section:NewButton("FS 1B", "123", function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1176, 4789, -2293)
+wait(0.5)
+end)
+
+Section:NewButton("FS 100B", "123", function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1381, 9274, 1648)
+wait(0.5)
+end)
+
+Section:NewButton("FS 10T", "123", function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-363, 15735, -3)
+wait(0.5)
+end)
+
+Section:NewButton("PP 1M", "123", function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2527, 5486, -532)
+wait(0.5)
+end)
+
+Section:NewButton("PP 1B", "123", function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2560, 5500, -439)
+wait(0.5)
+end)
+
+Section:NewButton("PP 1T", "123", function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2582, 5516, -504)
+wait(0.5)
+end)
+
+Section:NewButton("PP 1Qa", "123", function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2544, 5412, -495)
+wait(0.5)
+end)
+
+Section:NewButton("BT100", "123", function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(365, 249, -445)
+wait(0.5)
+end)
+
+Section:NewButton("BT10K", "123", function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(349, 263, -490)
+wait(0.5)
+end)
+
+Section:NewButton("BT100K", "123", function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1640, 258, 2244)
+wait(0.5)
+end)
+
+Section:NewButton("BT1M", "123", function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2307, 976, 1068)
+wait(0.5)
+end)
+
+Section:NewButton("BT10M", "123", function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2024, 714, -1860)
+wait(0.5)
+end)
+
+Section:NewButton("BT1B", "123", function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-254, 286, 980)
+wait(0.5)
+end)
+
+Section:NewButton("BT100B", "123", function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-271, 279, 991)
+wait(0.5)
+end)
+
+Section:NewButton("BT10T", "123", function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-279, 279, 1007)
+wait(0.5)
+end)
+
+local Tab = Window:NewTab("Fun")
+local Section = Tab:NewSection("Fun")
+Section:NewButton("AntiVoid","",function(state)
+game.Players.LocalPlayer.Character.LeftHand.LeftWrist:remove()
+wait(0.1)
+game.Players.LocalPlayer.Character.RightHand.RightWrist:remove()
+end)
+
+Section:NewButton("GodMode", "123", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/1ArcX/Scripts/main/God%20Mode", true))()
+end)
+
+Section:NewToggle("RGB Weight","",function(state)
+tgo = state
+while tgo do wait()
+
+local args = {
+    [1] = {
+        [1] = "Weight",
+        [2] = "Weight1"
+    }
+}
+
+game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
+
+wait(0.2)
+
+local args = {
+    [1] = {
+        [1] = "Weight",
+        [2] = "Weight2"
+    }
+}
+
+game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
+
+wait(0.2)
+local args = {
+    [1] = {
+        [1] = "Weight",
+        [2] = "Weight3"
+    }
+}
+
+game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
+
+wait(0.2)
+
+local args = {
+    [1] = {
+        [1] = "Weight",
+        [2] = "Weight4"
+    }
+}
+
+game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
+end
+end)
+
+Section:NewToggle(" RGB Rank","",function(xd)
+Nony5 = xd
+while Nony5 do
+wait()
+local args = {
+    [1] = {
+        [1] = "ChangeRankEmblem",
+        [2] = 1
+    }
+}
+
+game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
+wait()
+local args = {
+    [1] = {
+        [1] = "ChangeRankEmblem",
+        [2] = 2
+    }
+}
+
+game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
+wait()
+local args = {
+    [1] = {
+        [1] = "ChangeRankEmblem",
+        [2] = 3
+    }
+}
+
+game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
+wait()
+local args = {
+    [1] = {
+        [1] = "ChangeRankEmblem",
+        [2] = 4
+    }
+}
+
+wait()
+local args = {
+    [1] = {
+        [1] = "ChangeRankEmblem",
+        [2] = 5
+    }
+}
+
+game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
+wait()
+local args = {
+    [1] = {
+        [1] = "ChangeRankEmblem",
+        [2] = 6
+    }
+}
+
+game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
+wait()
+local args = {
+    [1] = {
+        [1] = "ChangeRankEmblem",
+        [2] = 7
+    }
+}
+
+game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
+wait()
+local args = {
+    [1] = {
+        [1] = "ChangeRankEmblem",
+        [2] = 8
+    }
+}
+
+game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
+wait()
+local args = {
+    [1] = {
+        [1] = "ChangeRankEmblem",
+        [2] = 9
+    }
+}
+
+game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
+wait()
+local args = {
+    [1] = {
+        [1] = "ChangeRankEmblem",
+        [2] = 10
+    }
+}
+
+game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
+wait()
+end
+end)
+
+Section:NewButton("Aura delete","",function()
+game.Players.LocalPlayer.character.LeftHand.Aura1: Destroy()
+game.Players.LocalPlayer.character.RightHand.Aura1: Destroy()
+game.Players.LocalPlayer.character.LeftUpperLeg.Aura1: Destroy()
+game.Players.LocalPlayer.character.RightUpperLeg.Aura1: Destroy()
+game.Players.LocalPlayer.character.UpperTorso.Aura1: Destroy()
+game.Players.LocalPlayer.character.LeftHand.Aura2: Destroy()
+game.Players.LocalPlayer.character.RightHand.Aura2: Destroy()
+game.Players.LocalPlayer.character.LeftUpperLeg.Aura2: Destroy()
+game.Players.LocalPlayer.character.RightUpperLeg.Aura2: Destroy()
+game.Players.LocalPlayer.character.UpperTorso.Aura2: Destroy()
+end)
+
+local Tab = Window:NewTab("Additional Functions")
+local Section = Tab:NewSection("Additional Functions")
+
+Section:NewButton("Split", "123", function()
+game.Players.LocalPlayer.Character.UpperTorso.Waist:remove()
+end)
+
+Section:NewButton("Cmd-X", "123", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/CMD-X/CMD-X/master/Source",true))()
+end)
+
+
+Section:NewButton("Infinity", "123", function()
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'),true))()
+end)
+
+Section:NewButton("Anti AFK", "123", function()
+wait(0.5)local ba=Instance.new("ScreenGui")
+local ca=Instance.new("TextLabel")local da=Instance.new("Frame")
+local _b=Instance.new("TextLabel")local ab=Instance.new("TextLabel")ba.Parent=game.CoreGui
+ba.ZIndexBehavior=Enum.ZIndexBehavior.Sibling;ca.Parent=ba;ca.Active=true
+ca.BackgroundColor3=Color3.new(0.176471,0.176471,0.176471)ca.Draggable=true
+ca.Position=UDim2.new(0.698610067,0,0.098096624,0)ca.Size=UDim2.new(0,370,0,52)
+ca.Font=Enum.Font.SourceSansSemibold;ca.Text="Anti AFK Script"ca.TextColor3=Color3.new(0,1,1)
+ca.TextSize=22;da.Parent=ca
+da.BackgroundColor3=Color3.new(0.196078,0.196078,0.196078)da.Position=UDim2.new(0,0,1.0192306,0)
+da.Size=UDim2.new(0,370,0,107)_b.Parent=da
+_b.BackgroundColor3=Color3.new(0.176471,0.176471,0.176471)_b.Position=UDim2.new(0,0,0.800455689,0)
+_b.Size=UDim2.new(0,370,0,21)_b.Font=Enum.Font.Arial;_b.Text="Made by Dynamic. (please subscribe)"
+_b.TextColor3=Color3.new(0,1,1)_b.TextSize=20;ab.Parent=da
+ab.BackgroundColor3=Color3.new(0.176471,0.176471,0.176471)ab.Position=UDim2.new(0,0,0.158377,0)
+ab.Size=UDim2.new(0,370,0,44)ab.Font=Enum.Font.ArialBold;ab.Text="Status: Active"
+ab.TextColor3=Color3.new(0,1,1)ab.TextSize=20;local bb=game:service'VirtualUser'
+game:service'Players'.LocalPlayer.Idled:connect(function()
+bb:CaptureController()bb:ClickButton2(Vector2.new())
+ab.Text="Roblox Tried to kick you but we didnt let them kick you :D"wait(2)ab.Text="Status : Active"end)
+end)
+
+local Tab = Window:NewTab("Stack")
+local Section = Tab:NewSection("Stack")
+local PlayerChosen;
+local drop = Section:NewDropdown("Player", "", playerlist, function(new)
+    PlayerChosen = new;
+end)
+
+game.Players.PlayerAdded:Connect(function(player)
+    local name = player.Name
+        table.insert(playerlist,name)
+    drop:Refresh(playerlist)
+end)
+
+game.Players.PlayerRemoving:Connect(function(player)
+    local name = player.Name
+    for i,v in pairs(playerlist)do
+        if v == name then  
+            table.remove(playerlist,i)
+        end
+    end
+end)
+
+Section:NewToggle("Stack Spam 1T", "", function(state)
+da = state
+while da do
+task.wait()
+pcall (function()
+            if game.Players:FindFirstChild(PlayerChosen).Character.Humanoid.Health ~= 0 then
+                if not game.Players:FindFirstChild(PlayerChosen).Character:FindFirstChild("SafeZoneShield") then 
+local x = game.Players.LocalPlayer.Character.HumanoidRootPart.Position.x
+local z = game.Players.LocalPlayer.Character.HumanoidRootPart.Position.z
+
+local x2 = game.Players:FindFirstChild(PlayerChosen).Character.HumanoidRootPart.Position.x
+local y = game.Players:FindFirstChild(PlayerChosen).Character.HumanoidRootPart.Position.y
+local z2 = game.Players:FindFirstChild(PlayerChosen).Character.HumanoidRootPart.Position.z
+local args = {[1] = {[1] = "Skill_SpherePunch",[2] = Vector3.new(x, 10000, z)}}
+game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
+for i, v in ipairs (game:GetService("Workspace").Storage:GetChildren()) do
+    if v.Name == "EnergySphere8" then
+        v.CFrame = CFrame.new(x2, y, z2)
+    end 
+end
+end
+end
+end)
+end
+end)
+
+Section:NewToggle("Stack Spam 1QA", "", function(state)
+da = state
+while da do
+task.wait()
+pcall (function()
+            if game.Players:FindFirstChild(PlayerChosen).Character.Humanoid.Health ~= 0 then
+                if not game.Players:FindFirstChild(PlayerChosen).Character:FindFirstChild("SafeZoneShield") then 
+local x = game.Players.LocalPlayer.Character.HumanoidRootPart.Position.x
+local z = game.Players.LocalPlayer.Character.HumanoidRootPart.Position.z
+
+local x2 = game.Players:FindFirstChild(PlayerChosen).Character.HumanoidRootPart.Position.x
+local y = game.Players:FindFirstChild(PlayerChosen).Character.HumanoidRootPart.Position.y
+local z2 = game.Players:FindFirstChild(PlayerChosen).Character.HumanoidRootPart.Position.z
+local args = {[1] = {[1] = "Skill_SpherePunch",[2] = Vector3.new(x, 10000, z)}}
+game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
+for i, v in ipairs (game:GetService("Workspace").Storage:GetChildren()) do
+    if v.Name == "EnergySphere9" then
+        v.CFrame = CFrame.new(x2, y, z2)
+    end 
+end
+end
+end
+end)
+end
+end)
+
+Section:NewToggle("Stack Spam 10B", "", function(state)
+da = state
+while da do
+task.wait()
+pcall (function()
+            if game.Players:FindFirstChild(PlayerChosen).Character.Humanoid.Health ~= 0 then
+                if not game.Players:FindFirstChild(PlayerChosen).Character:FindFirstChild("SafeZoneShield") then 
+local x = game.Players.LocalPlayer.Character.HumanoidRootPart.Position.x
+local z = game.Players.LocalPlayer.Character.HumanoidRootPart.Position.z
+
+local x2 = game.Players:FindFirstChild(PlayerChosen).Character.HumanoidRootPart.Position.x
+local y = game.Players:FindFirstChild(PlayerChosen).Character.HumanoidRootPart.Position.y
+local z2 = game.Players:FindFirstChild(PlayerChosen).Character.HumanoidRootPart.Position.z
+local args = {[1] = {[1] = "Skill_SpherePunch",[2] = Vector3.new(x, 10000, z)}}
+game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
+for i, v in ipairs (game:GetService("Workspace").Storage:GetChildren()) do
+    if v.Name == "EnergySphere7" then
+        v.CFrame = CFrame.new(x2, y, z2)
+    end 
+end
+end
+end
+end)
+end
+end)
+
+local Tab = Window:NewTab("Settings")
+local Section = Tab:NewSection("Settings")
+
+Section:NewKeybind("Close", "KeybindInfo", Enum.KeyCode.RightAlt, function()
+    Library:ToggleUI()
+end)
