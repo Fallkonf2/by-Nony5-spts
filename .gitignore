@@ -1,12 +1,29 @@
+local playerfiststat = game:GetService("Players").LocalPlayer.PrivateStats.FistStrength.Value
+	local ballstat = ""
+
+	repeat wait() until game.Players.LocalPlayer.PrivateStats:FindFirstChild("FistStrength")
+
+	if playerfiststat >= 999 and playerfiststat <= 10000 then ballstat = "EnergySphere1"
+	elseif playerfiststat >= 9999 and playerfiststat <= 100000 then ballstat = "EnergySphere2"
+	elseif playerfiststat >= 99999 and playerfiststat <= 1000000 then ballstat = "EnergySphere3"
+	elseif playerfiststat >= 999999 and playerfiststat <= 10000000 then ballstat = "EnergySphere4"
+	elseif playerfiststat >= 9999999 and playerfiststat <= 100000000 then ballstat = "EnergySphere5"
+	elseif playerfiststat >= 99999999 and playerfiststat <= 10000000000 then ballstat = "EnergySphere6"
+	elseif playerfiststat >= 9999999999 and playerfiststat <= 1000000000000 then ballstat = "EnergySphere7"
+	elseif playerfiststat >= 999999999999 and playerfiststat <= 1000000000000000 then ballstat = "EnergySphere8"
+	elseif playerfiststat >= 999999999999999 then ballstat = "EnergySphere9"
+	end
+
+
 local playerlist = {};
 for i,v in pairs(game.Players:GetPlayers())do
 table.insert(playerlist,v.Name)
 end
 
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
-local Window = Library.CreateLib("Spts Free Script v1.5", "BloodTheme")
-local Tab = Window:NewTab("Farm")
-local Section = Tab:NewSection("Farm")
+local Window = Library.CreateLib("FN Hub", "DarkTheme")
+local Tab = Window:NewTab("AutoFarm")
+local Section = Tab:NewSection("Fist")
 
 Section:NewToggle("FS10T", "1", function(v)
 getgenv().autofs = v
@@ -53,7 +70,7 @@ game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
 end
 end)
 
-
+local Section = Tab:NewSection("PP")
 Section:NewToggle("PP1QA", "1", function(v)
 getgenv().autofs = v
 while true do wait(0.1)
@@ -111,15 +128,8 @@ game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
 end
 end)
 
-local Tab = Window:NewTab("Teleports + Split")
-local Section = Tab:NewSection("Teleports + Split")
-Section:NewButton("BT10T+FS10T", "123", function()
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-279, 279, 1007)
-wait(0.5)
-    game.Players.LocalPlayer.Character.UpperTorso.Waist:remove()
-wait(0.5)
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-369,15735,-9)
-end)
+local Tab = Window:NewTab("Tp+Split")
+local Section = Tab:NewSection("BT+PP")
 Section:NewButton("BT10T+PP1T", "123", function()
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-279, 279, 1007)
 wait(0.5)
@@ -136,12 +146,21 @@ wait(0.5)
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2542, 5412, -497)
 end)
 
+local Section = Tab:NewSection("BT+FIST")
 Section:NewButton("BT100b+FS100b", "123", function()
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-275, 281, 991)
 wait(0.5)
     game.Players.LocalPlayer.Character.UpperTorso.Waist:remove()
 wait(0.5)
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1380, 9274, 1647)
+end)
+
+Section:NewButton("BT10T+FS10T", "123", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-279, 279, 1007)
+wait(0.5)
+    game.Players.LocalPlayer.Character.UpperTorso.Waist:remove()
+wait(0.5)
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-369,15735,-9)
 end)
 
 Section:NewButton("BT1b+FS1b", "123", function()
@@ -168,7 +187,7 @@ wait(0.5)
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2276, 1943, 1053)
 end)
 
-local Tab = Window:NewTab("Tp To Locations")
+local Tab = Window:NewTab("Teleports")
 local Section = Tab:NewSection("Tp To Locations")
 Section:NewButton("SafeZone", "123", function()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(471, 249, 889)
@@ -180,6 +199,7 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-766, 24
 wait(0.5)
 end)
 
+local Section = Tab:NewSection("Fist")
 Section:NewButton("FS Rock x10", "123", function()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(382, 249, 971)
 wait(0.5)
@@ -205,6 +225,7 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-363, 15
 wait(0.5)
 end)
 
+local Section = Tab:NewSection("PP")
 Section:NewButton("PP 1M", "123", function()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2527, 5486, -532)
 wait(0.5)
@@ -225,6 +246,7 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2544, 5
 wait(0.5)
 end)
 
+local Section = Tab:NewSection("BT")
 Section:NewButton("BT100", "123", function()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(365, 249, -445)
 wait(0.5)
@@ -266,7 +288,7 @@ wait(0.5)
 end)
 
 local Tab = Window:NewTab("Fun")
-local Section = Tab:NewSection("Fun")
+local Section = Tab:NewSection("GodMode")
 Section:NewButton("AntiVoid","",function(state)
 game.Players.LocalPlayer.Character.LeftHand.LeftWrist:remove()
 wait(0.1)
@@ -277,6 +299,7 @@ Section:NewButton("GodMode", "123", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/1ArcX/Scripts/main/God%20Mode", true))()
 end)
 
+local Section = Tab:NewSection("RGB")
 Section:NewToggle("RGB Weight","",function(state)
 tgo = state
 while tgo do wait()
@@ -433,8 +456,8 @@ game.Players.LocalPlayer.character.RightUpperLeg.Aura2: Destroy()
 game.Players.LocalPlayer.character.UpperTorso.Aura2: Destroy()
 end)
 
-local Tab = Window:NewTab("Additional Functions")
-local Section = Tab:NewSection("Additional Functions")
+local Tab = Window:NewTab("Functions")
+local Section = Tab:NewSection("Functions")
 
 Section:NewButton("Split", "123", function()
 game.Players.LocalPlayer.Character.UpperTorso.Waist:remove()
@@ -471,6 +494,7 @@ bb:CaptureController()bb:ClickButton2(Vector2.new())
 ab.Text="Roblox Tried to kick you but we didnt let them kick you :D"wait(2)ab.Text="Status : Active"end)
 end)
 
+
 local Tab = Window:NewTab("Stack")
 local Section = Tab:NewSection("Stack")
 local PlayerChosen;
@@ -493,7 +517,36 @@ game.Players.PlayerRemoving:Connect(function(player)
     end
 end)
 
-Section:NewToggle("Stack Spam 1T", "", function(state)
+Section:NewToggle("Stack All User", "", function(state)
+		tgo = state
+		while tgo do
+			task.wait()
+			pcall (function()
+				local Random = game.Players:GetPlayers()[math.random(1,#game.Players:GetPlayers())]
+				if Random.PrivateStats.BodyToughness.Value <= game:GetService("Players").LocalPlayer.PrivateStats.FistStrength.Value * 2 then
+					if Random.Character.Humanoid.Health ~= 0 then
+						if not Random.Character:FindFirstChild("SafeZoneShield") then 
+							local x = game.Players.LocalPlayer.Character.HumanoidRootPart.Position.x
+							local z = game.Players.LocalPlayer.Character.HumanoidRootPart.Position.z
+
+							local x2 = Random.Character.HumanoidRootPart.Position.x
+							local y = Random.Character.HumanoidRootPart.Position.y
+							local z2 = Random.Character.HumanoidRootPart.Position.z
+							local args = {[1] = {[1] = "Skill_SpherePunch",[2] = Vector3.new(x, 10000, z)}}
+							game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
+							for i, v in ipairs (game:GetService("Workspace").Storage:GetChildren()) do
+								if v.Name == ballstat then
+									v.CFrame = CFrame.new(x2, y, z2)
+								end 
+							end
+						end
+					end
+				end
+			end)
+		end
+	end)
+
+Section:NewToggle("Stack One User", "", function(state)
 da = state
 while da do
 task.wait()
@@ -509,7 +562,7 @@ local z2 = game.Players:FindFirstChild(PlayerChosen).Character.HumanoidRootPart.
 local args = {[1] = {[1] = "Skill_SpherePunch",[2] = Vector3.new(x, 10000, z)}}
 game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
 for i, v in ipairs (game:GetService("Workspace").Storage:GetChildren()) do
-    if v.Name == "EnergySphere8" then
+    if v.Name == ballstat then
         v.CFrame = CFrame.new(x2, y, z2)
     end 
 end
@@ -519,57 +572,12 @@ end)
 end
 end)
 
-Section:NewToggle("Stack Spam 1QA", "", function(state)
-da = state
-while da do
-task.wait()
-pcall (function()
-            if game.Players:FindFirstChild(PlayerChosen).Character.Humanoid.Health ~= 0 then
-                if not game.Players:FindFirstChild(PlayerChosen).Character:FindFirstChild("SafeZoneShield") then 
-local x = game.Players.LocalPlayer.Character.HumanoidRootPart.Position.x
-local z = game.Players.LocalPlayer.Character.HumanoidRootPart.Position.z
 
-local x2 = game.Players:FindFirstChild(PlayerChosen).Character.HumanoidRootPart.Position.x
-local y = game.Players:FindFirstChild(PlayerChosen).Character.HumanoidRootPart.Position.y
-local z2 = game.Players:FindFirstChild(PlayerChosen).Character.HumanoidRootPart.Position.z
-local args = {[1] = {[1] = "Skill_SpherePunch",[2] = Vector3.new(x, 10000, z)}}
-game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
-for i, v in ipairs (game:GetService("Workspace").Storage:GetChildren()) do
-    if v.Name == "EnergySphere9" then
-        v.CFrame = CFrame.new(x2, y, z2)
-    end 
-end
-end
-end
-end)
-end
-end)
 
-Section:NewToggle("Stack Spam 10B", "", function(state)
-da = state
-while da do
-task.wait()
-pcall (function()
-            if game.Players:FindFirstChild(PlayerChosen).Character.Humanoid.Health ~= 0 then
-                if not game.Players:FindFirstChild(PlayerChosen).Character:FindFirstChild("SafeZoneShield") then 
-local x = game.Players.LocalPlayer.Character.HumanoidRootPart.Position.x
-local z = game.Players.LocalPlayer.Character.HumanoidRootPart.Position.z
+Section:NewButton("Respawn", "", function()
+   game.ReplicatedStorage.RemoteEvent:FireServer({"Respawn"})
+end)       
 
-local x2 = game.Players:FindFirstChild(PlayerChosen).Character.HumanoidRootPart.Position.x
-local y = game.Players:FindFirstChild(PlayerChosen).Character.HumanoidRootPart.Position.y
-local z2 = game.Players:FindFirstChild(PlayerChosen).Character.HumanoidRootPart.Position.z
-local args = {[1] = {[1] = "Skill_SpherePunch",[2] = Vector3.new(x, 10000, z)}}
-game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
-for i, v in ipairs (game:GetService("Workspace").Storage:GetChildren()) do
-    if v.Name == "EnergySphere7" then
-        v.CFrame = CFrame.new(x2, y, z2)
-    end 
-end
-end
-end
-end)
-end
-end)
 
 local Tab = Window:NewTab("Settings")
 local Section = Tab:NewSection("Settings")
