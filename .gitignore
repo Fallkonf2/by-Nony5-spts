@@ -21,7 +21,7 @@ table.insert(playerlist,v.Name)
 end
 
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
-local Window = Library.CreateLib("FN Hub Free", "DarkTheme")
+local Window = Library.CreateLib("NF Hub", "DarkTheme")
 local Tab = Window:NewTab("AutoFarm")
 local Section = Tab:NewSection("Fist")
 
