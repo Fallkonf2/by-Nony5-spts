@@ -696,14 +696,11 @@ Section:NewButton("Respawn 50Hp", "", function()
 			function()
 				if
 					game.Players.LocalPlayer.Character.Humanoid.Health <
-					game.Players.LocalPlayer.Character.Humanoid.MaxHealth * .50
+					game.Players.LocalPlayer.Character.Humanoid.MaxHealth * .75
 				then
 					local j = game.Players.LocalPlayer.Character:GetPrimaryPartCFrame()
-
-					game.Players.LocalPlayer.Character:Destroy()
-					wait()
 					game.ReplicatedStorage.RemoteEvent:FireServer({"Respawn"})
-					task.wait(1.9)
+					task.wait(1.7)
 					game.Players.LocalPlayer.Character:SetPrimaryPartCFrame(j)
 					wait()
 					game.Players.LocalPlayer.Character:SetPrimaryPartCFrame(j)
